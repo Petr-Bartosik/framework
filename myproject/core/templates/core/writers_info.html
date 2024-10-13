@@ -1,0 +1,17 @@
+def writers_info(request):
+    author = request.GET.get('writers')
+    year = request.GET.get('year')
+
+    books = {
+        'Hemingway': {
+            1926: 'Informace o knihách napsaných Hemingwaye v roce 1926.',
+            1940: 'Informace o knihách napsaných Hemingwaye v roce 1940.',
+        }
+    }
+
+    if author in books and int(year) in books[author]:
+        book_info = books[author][int(year)]
+        context = {'book_info': book_info}
+        return render(request, 'core/writers_info.html', context)
+    else:
+        return redirect('author_detail', author_name=author)  # Přesměrování na detail autora

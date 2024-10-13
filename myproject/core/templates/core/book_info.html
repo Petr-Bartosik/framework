@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informace o knize</title>
+</head>
+<body>
+    <h1>Informace o knize</h1>
+    <p>{{ book_info }}</p>
+    <a href="{% url 'author_detail' author_name=author_name %}">Zpět na stránku autora</a> |
+    <a href="{% url 'main' %}">Zpět na hlavní menu</a>
+</body>
+</html>

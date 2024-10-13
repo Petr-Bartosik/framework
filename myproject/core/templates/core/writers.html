@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoři</title>
+</head>
+<body>
+    <h1>Menu</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'main' %}">Main</a></li>
+            <li><a href="{% url 'books' %}">Books</a></li>
+            <li><a href="{% url 'writers' %}">Writers</a></li>
+        </ul>
+    </nav>
+
+    <h2>Naši autoři</h2>
+    <ul>
+        {% for author in authors %}
+            <li><a href="{% url 'author_detail' author_name=author %}">{{ author }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
